@@ -12,22 +12,22 @@ namespace pimpl {
 
     int Container::value() const {
         PIMPL_IMPL(const Container);
-        return impl->value;
+        return impl.value;
     }
 
     void Container::setValue(int value) {
         PIMPL_IMPL(Container);
-        impl->value = value;
+        impl.value = value;
     }
 
     int Container::value2() const {
         PIMPL_IMPL_THIS;
-        return impl->value;
+        return impl.value;
     }
 
     void Container::setValue2(int value) {
         PIMPL_IMPL_THIS;
-        impl->value = value;
+        impl.value = value;
     }
 
     Container::Container(Impl &impl, int value) : _impl(&impl) {

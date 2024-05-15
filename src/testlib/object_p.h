@@ -6,11 +6,10 @@
 namespace pimpl {
 
     class TESTLIB_EXPORT Object::Impl {
+        PIMPL_DECLARE_INTF(Object)
     public:
         virtual ~Impl() = default;
 
-        using Intf = Object;
-        friend class Object;
         Object *_intf;
 
     public:
@@ -24,10 +23,7 @@ namespace pimpl {
     };
 
     class TESTLIB_EXPORT Gadget::Impl : public Object::Impl {
-    public:
-        using Intf = Gadget;
-        friend class Gadget;
-
+        PIMPL_DECLARE_INTF(Gadget)
     public:
         std::string s;
     };

@@ -23,8 +23,8 @@ namespace pimpl {
         void setValue2(int value);
 
     protected:
-        std::unique_ptr<Impl> _impl;
         Object(Impl &impl, int value = 0);
+        std::unique_ptr<Impl> _impl;
     };
 
     class TESTLIB_EXPORT Gadget : public Object {

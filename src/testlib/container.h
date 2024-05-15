@@ -21,8 +21,8 @@ namespace pimpl {
         void setValue2(int value);
 
     protected:
-        std::shared_ptr<Impl> _impl;
         Container(Impl &impl, int value = 0);
+        std::shared_ptr<Impl> _impl;
     };
 
 }

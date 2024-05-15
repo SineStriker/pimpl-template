@@ -43,8 +43,11 @@ public:                                                                         
     using Intf = T;                                                                                \
     friend class T;
 
-#define PIMPL_IMPL(T) auto *const impl = ::pimpl::get_impl<std::remove_const_t<T::Impl>>(_impl)
-#define PIMPL_INTF(T) auto *const intf = static_cast<T *>(_intf)
+#define pimpl_get_impl(T) ::pimpl::get_impl<std::remove_const_t<T::Impl>>(_impl)
+#define pimpl_get_intf(T) static_cast<T *>(_intf)
+
+#define PIMPL_IMPL(T) auto &impl = *pimpl_get_impl(T)
+#define PIMPL_INTF(T) auto &intf = *pimpl_get_intf(T)
 
 #define PIMPL_IMPL_THIS PIMPL_IMPL(std::remove_pointer_t<decltype(this)>)
 #define PIMPL_INTF_THIS PIMPL_INTF(Intf)
