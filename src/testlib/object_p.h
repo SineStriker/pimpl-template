@@ -3,27 +3,21 @@
 
 #include <testlib/object.h>
 
-namespace pimpl {
+namespace testlib {
 
     class TESTLIB_EXPORT Object::Impl {
-        PIMPL_DECLARE_INTF(Object)
+        TESTLIB_DECLARE_DECL(Object)
     public:
         virtual ~Impl() = default;
 
-        Object *_intf;
+        Object *_decl;
 
     public:
         int value;
-
-        int value_helper() const;
-        void setValue_helper(int val);
-
-        int value_helper2() const;
-        void setValue_helper2(int val);
     };
 
     class TESTLIB_EXPORT Gadget::Impl : public Object::Impl {
-        PIMPL_DECLARE_INTF(Gadget)
+        TESTLIB_DECLARE_DECL(Gadget)
     public:
         std::string s;
     };

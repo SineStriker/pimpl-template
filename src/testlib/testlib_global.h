@@ -21,5 +21,15 @@
 #  endif
 #endif
 
+#define TESTLIB_DECLARE_IMPL(T)                                                                    \
+public:                                                                                            \
+    class Impl;                                                                                    \
+    friend class Private;
+
+#define TESTLIB_DECLARE_DECL(T)                                                                    \
+public:                                                                                            \
+    using Decl = T;                                                                                \
+    friend class T;
+
 
 #endif // TESTLIB_GLOBAL_H

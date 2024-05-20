@@ -1,7 +1,9 @@
 #include "container.h"
 #include "container_p.h"
 
-namespace pimpl {
+#include "testlib_global_p.h"
+
+namespace testlib {
 
     Container::Impl::~Impl() = default;
 
@@ -11,22 +13,12 @@ namespace pimpl {
     Container::~Container() = default;
 
     int Container::value() const {
-        PIMPL_IMPL(const Container);
+        __impl_t;
         return impl.value;
     }
 
     void Container::setValue(int value) {
-        PIMPL_IMPL(Container);
-        impl.value = value;
-    }
-
-    int Container::value2() const {
-        PIMPL_IMPL_THIS;
-        return impl.value;
-    }
-
-    void Container::setValue2(int value) {
-        PIMPL_IMPL_THIS;
+        __impl_t;
         impl.value = value;
     }
 

@@ -3,8 +3,8 @@
 #include <testlib/container.h>
 
 int main(int argc, char *argv[]) {
-    pimpl::Container c;
-    pimpl::Container c2 = c;
+    testlib::Container c;
+    testlib::Container c2 = c;
 
     std::cout << "Begin set value." << std::endl;
     c.setValue(1);

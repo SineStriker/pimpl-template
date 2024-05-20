@@ -5,7 +5,7 @@
 
 #include <testlib/container.h>
 
-namespace pimpl {
+namespace testlib {
 
     class TESTLIB_EXPORT Container::Impl {
     public:
